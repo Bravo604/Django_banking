@@ -1,0 +1,9 @@
+
+{% csrf_token %}
+<fieldset>
+    <legend><h1>{{ account.number }}</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% for credit in account.credit_set.all %}
+       {{ credit.sum }}
+    {% endfor %}
+</fieldset>

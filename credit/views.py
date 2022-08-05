@@ -14,6 +14,11 @@ class IndexView(generic.ListView):
         return Client.objects.all()
 
 
-class DetailView(generic.DetailView):
+class DetailClientView(generic.DetailView):
     model = Client
     template_name = 'detail.html'
+
+
+class DetailCreditView(generic.DetailView):
+    model = Account
+    template_name = 'detail_credit.html'
